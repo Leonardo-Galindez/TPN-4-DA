@@ -39,7 +39,7 @@ public class Terreno{
     }
 
     public String toString(){
-        return "codigo:"+codigo+
+        return  "codigo:"+codigo+
                 "\nbase:"+base+
                 "\naltura:"+altura+
                 "\nmanzana:"+manzana;
