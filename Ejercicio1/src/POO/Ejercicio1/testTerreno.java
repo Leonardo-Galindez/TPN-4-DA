@@ -1,5 +1,5 @@
 
-package Ejercicio1;
+package POO.Ejercicio1;
 import java.util.Scanner;
 
 public class testTerreno {

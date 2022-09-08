@@ -1,4 +1,4 @@
-package Ejercicio1;
+package POO.Ejercicio1;
 
 public class Terreno{
 
