@@ -40,9 +40,9 @@ public class Terreno{
 
     public String toString(){
         return "codigo:"+codigo+
-                "base:"+base+
-                "altura:"+altura+
-                "manzana:"+manzana;
+                "\nbase:"+base+
+                "\naltura:"+altura+
+                "\nmanzana:"+manzana;
     } 
 
     public boolean equals(Terreno ter){
