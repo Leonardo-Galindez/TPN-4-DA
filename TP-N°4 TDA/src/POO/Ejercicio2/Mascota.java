@@ -33,10 +33,38 @@ public class Mascota {
         return edad;
     } 
     public String toString(){
-        return  "codigo"+codigo+
-                "\nnombre"+nombre+
-                "\npedo"+peso+
-                "\nedad"+edad;
+        return  "codigo:"+codigo+
+                "\nnombre:"+nombre+
+                "\npeso:"+peso+
+                "\nedad:"+edad;
+    }
+
+    //Modificadores
+
+    public void setCodigo(int cod){
+        this.codigo=cod;
+    }
+
+    public void setNombre(String nn){
+        this.nombre=nn;
+    }
+
+    public void setPeso(double pe){
+        this.peso=pe;
+    }
+
+    public void setEdad(int ed){
+        this.edad=ed;
+    }
+
+    //Propias del tipo
+
+    public boolean Equals(Mascota otra){
+        return codigo==otra.codigo;
+    }
+
+    public void cumpleMascota(){
+        this.edad=edad+1;
     }
     
 }
