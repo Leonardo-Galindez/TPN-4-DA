@@ -26,7 +26,7 @@ public class testMascota {
         edad=sc.nextInt();
         miMascota.setEdad(edad);
 
-        miMascota.getNombre(nombre);
+        miMascota.getNombre();
         System.out.println("El nombre de la mascota:"+codigo+" es:"+nombre);
         miMascota.cumpleMascota();
         System.out.println("Ingrse nuevo peso de la mascota "+codigo);

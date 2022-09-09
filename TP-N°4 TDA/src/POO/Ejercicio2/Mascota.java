@@ -21,16 +21,16 @@ public class Mascota {
 
     //Observadores
 
-    public int getCodigo(int cod){
-        return cod;
+    public int getCodigo(){
+        return codigo;
     } 
-    public String getNombre(String nombre){
+    public String getNombre( ){
         return nombre;
     } 
-    public double getPeso(double pe){
-        return pe;
+    public double getPeso(){
+        return peso;
     } 
-    public int getEdad(int edad){
+    public int getEdad(){
         return edad;
     } 
     public String toString(){
