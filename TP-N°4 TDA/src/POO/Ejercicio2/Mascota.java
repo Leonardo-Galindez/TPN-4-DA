@@ -1,6 +1,7 @@
 package POO.Ejercicio2;
 
 public class Mascota {
+    
     private int codigo;
     private String nombre;
     private double peso;
