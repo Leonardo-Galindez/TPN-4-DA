@@ -45,7 +45,7 @@ public class Ingrediente {
     public double getMedidaGramo(){
         return medidaGramo;
     }
-
+    
     public String toString(){
         return "nombre:"+nombre+
                 "\ncantidad:"+cantidad+

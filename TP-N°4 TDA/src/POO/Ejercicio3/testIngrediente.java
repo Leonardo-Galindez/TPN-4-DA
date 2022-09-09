@@ -75,6 +75,7 @@ public class testIngrediente {
     public static int Menu(){
         Scanner sc= new Scanner(System.in);
         int rta;
+        
         System.out.println("Ingrese unidad de medida");
         System.out.println("Unidades-------1");
         System.out.println("Litros---------2");
