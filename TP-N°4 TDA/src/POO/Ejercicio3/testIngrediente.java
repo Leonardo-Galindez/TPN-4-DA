@@ -13,7 +13,7 @@ public class testIngrediente {
         double gramo,litro;
 
         valorClave=true;
-
+        
         Ingrediente nuevoIngrediente = new Ingrediente();
         Ingrediente nuevoIngrediente2 = new Ingrediente();
 
