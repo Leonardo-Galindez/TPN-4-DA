@@ -34,7 +34,7 @@ public class Fecha {
     public String toString(){
         return dia+"/"+mes+"/"+anio;
     }
-
+    
     /*public boolean equals(){  
         return 
     }*/
@@ -56,7 +56,7 @@ public class Fecha {
     //Propias del tipo
 
     public int diasTranscurridos(int d, int m, int a){
-        int diasTotal,dias;
+        int diasTotal;
         diasTotal=0;
         int [] Dias={31,28,31,30,31,30,31,31,30,31,30,31};
         if(a % 4==0){
@@ -65,7 +65,7 @@ public class Fecha {
         for(int i=m-1;i>=0;i--){
             diasTotal=diasTotal+Dias[i];
         }
-        return diasTotal;
+        return diasTotal-d;
     }
 
     public boolean esFechaAnterio(int d, int m, int a){
