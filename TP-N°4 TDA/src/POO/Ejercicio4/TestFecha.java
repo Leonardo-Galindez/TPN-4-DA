@@ -5,76 +5,70 @@ import java.util.Scanner;
 public class TestFecha {
     public static void main(String[] args) {
 
-        int dias,dia,mes,anio,DiasTotales;
-        boolean valorFecha,valorBisiesto;
+        int dias, dia, mes, anio, DiasTotales;
+        boolean valorFecha, valorBisiesto;
 
-        valorFecha=false;
+        valorFecha = false;
 
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        Fecha miFecha = new Fecha();
-        Fecha miFecha2 = new Fecha();
-
-        do{
+        do {
             System.out.println("Ingrese fecha");
 
             System.out.println();
 
             System.out.println("Ingrese dia");
-            dia=sc.nextInt();
+            dia = sc.nextInt();
             System.out.println("Ingrese mes");
-            mes=sc.nextInt();
+            mes = sc.nextInt();
             System.out.println("Ingrese año");
-            anio=sc.nextInt();
+            anio = sc.nextInt();
 
-            if((dia<=31 && dia>=1) && (mes<=12 && mes>=1)&& (anio>1)){
-                valorFecha=true;
+            if ((dia <= 31 && dia >= 1) && (mes <= 12 && mes >= 1) && (anio > 1)) {
+                valorFecha = true;
             }
 
-        }while(!valorFecha);
-
-        miFecha.Fecha(dia, mes, anio);
+        } while (!valorFecha);
+        Fecha miFecha = new Fecha(dia, mes, anio);
 
         dias = miFecha.diasTranscurridos(dia, mes, anio);
-        System.out.println("Dias transcurridos:"+dias);
+        System.out.println("Dias transcurridos:" + dias);
 
-        valorBisiesto=miFecha.esBisiesto(anio);
-        System.out.println("Es bisiesto:"+valorBisiesto);
+        valorBisiesto = miFecha.esBisiesto(anio);
+        System.out.println("Es bisiesto:" + valorBisiesto);
 
-        do{
+        do {
             System.out.println("Ingrese fecha");
 
             System.out.println();
 
             System.out.println("Ingrese dia");
-            dia=sc.nextInt();
+            dia = sc.nextInt();
             System.out.println("Ingrese mes");
-            mes=sc.nextInt();
+            mes = sc.nextInt();
             System.out.println("Ingrese año");
-            anio=sc.nextInt();
+            anio = sc.nextInt();
 
-            if((dia<=31 && dia>=1) && (mes<=12 && mes>=1)&& (anio>1)){
-                valorFecha=true;
+            if ((dia <= 31 && dia >= 1) && (mes <= 12 && mes >= 1) && (anio > 1)) {
+                valorFecha = true;
             }
 
-        }while(!valorFecha);
-        
-        miFecha2.Fecha(dia, mes, anio);
+        } while (!valorFecha);
 
-        if(miFecha.esFechaAnterio(miFecha2.getDia(),miFecha2.getMes(),miFecha2.getAnio())){
-            System.out.println(miFecha2.toString()+":es anterior a:"+miFecha.toString());
-        }else{
-            System.out.println(miFecha.toString()+":es anterior a:"+miFecha2.toString());
+        Fecha miFecha2 = new Fecha(dia, mes, anio);
+
+        if (miFecha.esFechaAnterio(miFecha2.getDia(), miFecha2.getMes(), miFecha2.getAnio())) {
+            System.out.println(miFecha2.toString() + ":es anterior a:" + miFecha.toString());
+        } else {
+            System.out.println(miFecha.toString() + ":es anterior a:" + miFecha2.toString());
         }
 
-
         System.out.println("Ingrese dias para agregar");
-        DiasTotales=sc.nextInt();
+        DiasTotales = sc.nextInt();
         miFecha.calcularFecha(dia, mes, anio, DiasTotales);
 
         System.out.println(miFecha.toString());
-        
+
     }
 
-    
 }
