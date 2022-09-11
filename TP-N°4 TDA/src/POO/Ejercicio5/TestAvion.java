@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TestAvion {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        int idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio;
+        int idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio,hora,km;
         
         System.out.println("Ingrese id del avion");
         idAvion=sc.nextInt();
@@ -18,12 +18,12 @@ public class TestAvion {
         System.out.println("Ingrese velocidad promedio del avion");
         velocidadPromedio=sc.nextInt();
 
-        Avion otrAvion1 = new Avion(idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio);
+        Avion otroAvion1 = new Avion(idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio);
         
         do{
             System.out.println("Ingrese id del avion");
             idAvion=sc.nextInt();
-        }while(otrAvion1.equals(idAvion));
+        }while(otroAvion1.equals(idAvion));
 
         System.out.println("Ingrese modelo del avion");
         Modelo=sc.nextInt();
@@ -34,7 +34,19 @@ public class TestAvion {
         System.out.println("Ingrese velocidad promedio del avion");
         velocidadPromedio=sc.nextInt();
 
-        Avion otrAvion2 = new Avion(idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio);
+        Avion otroAvion2 = new Avion(idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio);
+
+        System.out.println();
+        System.out.println(otroAvion1.toString());
+        System.out.println();
+        System.out.println(otroAvion2.toString());
+
+        System.out.println("Ingrese horas de vuelo");
+        hora=sc.nextInt();
+        km=otroAvion1.Vuela(hora,velocidadPromedio,kilometros);
+        otroAvion1.setKilometros(km);
+
+        System.out.println(otroAvion1.toString());
     }
 
 }
