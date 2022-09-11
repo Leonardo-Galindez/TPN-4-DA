@@ -87,5 +87,37 @@ public class Fecha {
         return valorBi;
     }
 
-    //falta hacer el calculo fecha
+    public void calcularFecha(int dia,int mes, int anio,int d){
+        int cantMes,restoMes,cantAnio,restoAnio;
+
+        int [] Dias={31,28,31,30,31,30,31,31,30,31,30,31};
+        if(anio % 4==0){
+            Dias[1]=29;
+        }
+        restoAnio=mes;
+        dia=dia+d;
+        cantMes=dia/30;
+        restoMes=dia % 30;
+        
+        if(dia>31){
+           mes=mes+cantMes;
+            if(mes>12){
+              cantAnio=mes/12;
+              restoAnio=mes % 12;
+              anio=anio+cantAnio;
+            }
+        }
+        if(restoMes==0){
+            this.dia=1;
+        }else{
+            this.dia=restoMes;
+        }
+        if(restoAnio==0){
+            this.mes=1;
+        }else{
+            this.mes=restoAnio;
+        }
+        this.anio=anio;
+    }
+
 }

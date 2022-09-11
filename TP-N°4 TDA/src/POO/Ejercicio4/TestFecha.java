@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class TestFecha {
     public static void main(String[] args) {
 
-        int dias,dia,mes,anio,dia2,mes2,anio2;
-        boolean valorFecha,valorBisiesto,valorMayor;
+        int dias,dia,mes,anio,DiasTotales;
+        boolean valorFecha,valorBisiesto;
 
         valorFecha=false;
 
@@ -64,8 +64,15 @@ public class TestFecha {
         if(miFecha.esFechaAnterio(miFecha2.getDia(),miFecha2.getMes(),miFecha2.getAnio())){
             System.out.println(miFecha2.toString()+":es anterior a:"+miFecha.toString());
         }else{
-            System.out.println(miFecha2.toString()+":es anterior a:"+miFecha.toString());
+            System.out.println(miFecha.toString()+":es anterior a:"+miFecha2.toString());
         }
+
+
+        System.out.println("Ingrese dias para agregar");
+        DiasTotales=sc.nextInt();
+        miFecha.calcularFecha(dia, mes, anio, DiasTotales);
+
+        System.out.println(miFecha.toString());
         
     }
 
