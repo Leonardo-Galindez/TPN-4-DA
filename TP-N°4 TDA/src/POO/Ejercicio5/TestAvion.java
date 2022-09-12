@@ -39,6 +39,10 @@ public class TestAvion {
         System.out.println();
         System.out.println(otroAvion1.toString());
         System.out.println();
+<<<<<<< HEAD
+=======
+        System.out.println();
+>>>>>>> 120d6ff4b0d9f6830ffe6c3d30e147dc5173c1db
         System.out.println(otroAvion2.toString());
 
         System.out.println("Ingrese horas de vuelo");
