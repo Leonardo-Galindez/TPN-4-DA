@@ -87,11 +87,6 @@ public class Avion {
 
     //Propias del tipo
 
-    public int Vuela(int hora,int velProm,int km){
-
-        return this.kilometros=this.kilometros+velProm*hora; 
-    }
-
 
 
 }
