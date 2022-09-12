@@ -3,7 +3,7 @@ package POO.Ejercicio5;
 public class Avion {
     //Atributos
 
-    public static Avion otroAvion2;
+    
     private int idAvion;
     private int Modelo;
     private int CantAsientos;

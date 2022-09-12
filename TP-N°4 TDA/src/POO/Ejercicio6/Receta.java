@@ -9,7 +9,7 @@ public class Receta {
         int cantidad,medidaUnidad;
         double medidaLitro,medidaGramo;
         Scanner sc = new Scanner(System.in);
-
+        
         System.out.println("");
         
         Ingrediente ingrediente1 = new Ingrediente("",0,0,0,0);
