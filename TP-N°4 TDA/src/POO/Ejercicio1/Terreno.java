@@ -1,79 +1,79 @@
 package POO.Ejercicio1;
 
-public class Terreno{
+public class Terreno {
 
     private int codigo;
     private double base;
     private double altura;
     private int manzana;
 
-    //constructores
-    public  Terreno(int cod){
-        this.codigo=cod;
-        this.base=0;
-        this.altura=0;
+    // constructores
+    public Terreno(int cod) {
+        this.codigo = cod;
+        this.base = 0;
+        this.altura = 0;
     }
 
-    public Terreno(int cod,double ba,double al,int man){
-       this.codigo=cod;
-       this.base=ba;
-       this.altura=al;
-       this.manzana=man;
+    public Terreno(int cod, double ba, double al, int man) {
+        this.codigo = cod;
+        this.base = ba;
+        this.altura = al;
+        this.manzana = man;
     }
 
-    //Observadores
-    public int getCodigo(){
+    // Observadores
+    public int getCodigo() {
         return codigo;
     }
 
-    public double getBase(){
+    public double getBase() {
         return base;
     }
 
-    public double getAltura(){
+    public double getAltura() {
         return altura;
     }
 
-    public int getManzana(){
+    public int getManzana() {
         return manzana;
     }
 
-    public String toString(){
-        return  "codigo:"+codigo+
-                "\nbase:"+base+
-                "\naltura:"+altura+
-                "\nmanzana:"+manzana;
-    } 
-
-    public boolean equals(Terreno ter){
-        return codigo==ter.codigo;
+    public String toString() {
+        return "codigo:" + codigo +
+                "\nbase:" + base +
+                "\naltura:" + altura +
+                "\nmanzana:" + manzana;
     }
 
-    //Modificadores
-
-    public void setCodigo(int cod){
-        this.codigo=cod;
+    public boolean equals(Terreno ter) {
+        return codigo == ter.codigo;
     }
 
-    public void setBase(double ba){
-        this.base=base;
+    // Modificadores
+
+    public void setCodigo(int cod) {
+        this.codigo = cod;
     }
 
-    public void setAltura(double al){
-        this.altura=al;
+    public void setBase(double ba) {
+        this.base = base;
     }
 
-    //Propias del tipo
+    public void setAltura(double al) {
+        this.altura = al;
+    }
 
-    public double perimetro(double ba,double al){
+    // Propias del tipo
+
+    public double perimetro(double ba, double al) {
         double perimetro;
-        perimetro=2*ba+2*al;
+        perimetro = 2 * ba + 2 * al;
         return perimetro;
     }
 
-    public double superficie(double ba,double al){
+    public double superficie(double ba, double al) {
         double superficie;
-        superficie=ba*al;
+        superficie = ba * al;
         return superficie;
     }
 
