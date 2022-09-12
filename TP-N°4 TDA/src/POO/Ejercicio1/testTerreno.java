@@ -6,7 +6,7 @@ public class testTerreno {
         int codigo,manzana;
         double base,altura,perimetro,perimetroCerco,superficie,pago;
         Scanner sc= new Scanner(System.in);
-        Terreno miTerreno= new Terreno();
+        Terreno miTerreno= new Terreno(0,0,0,0);
         
         System.out.println("Ingrese codigo");
         codigo=sc.nextInt();
@@ -20,7 +20,6 @@ public class testTerreno {
         System.out.println("Ingrese manzana");
         manzana=sc.nextInt();
         
-        miTerreno.Terreno(codigo, base, altura, manzana);
         System.out.println(miTerreno.toString());
         perimetro=miTerreno.perimetro(miTerreno.getBase(), miTerreno.getAltura());
 

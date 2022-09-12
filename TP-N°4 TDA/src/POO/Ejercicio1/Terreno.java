@@ -8,13 +8,13 @@ public class Terreno{
     private int manzana;
 
     //constructores
-    public void Terreno(int cod){
+    public  Terreno(int cod){
         this.codigo=cod;
         this.base=0;
         this.altura=0;
     }
 
-    public void Terreno(int cod,double ba,double al,int man){
+    public Terreno(int cod,double ba,double al,int man){
        this.codigo=cod;
        this.base=ba;
        this.altura=al;

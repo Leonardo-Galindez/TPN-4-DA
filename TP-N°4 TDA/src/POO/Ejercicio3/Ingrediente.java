@@ -11,11 +11,11 @@ public class Ingrediente {
 
     //Constructores
 
-    public void Ingrediente(String nom){
+    public Ingrediente(String nom){
         this.nombre=nom;
     }
 
-    public void Ingrediente(String nom,int cant,int medU,int medL,int medG){
+    public Ingrediente(String nom,int cant,int medU,int medL,int medG){
 
         this.nombre=nom;
         this.cantidad=cant;
@@ -79,6 +79,9 @@ public class Ingrediente {
 
     public void setMedidaGramo(double medG){
         this.medidaGramo=medG;
+    }
+
+    public void Ingrediente(String string) {
     }
 
 }

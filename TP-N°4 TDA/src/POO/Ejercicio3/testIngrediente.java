@@ -14,8 +14,8 @@ public class testIngrediente {
 
         valorClave=true;
         
-        Ingrediente nuevoIngrediente = new Ingrediente();
-        Ingrediente nuevoIngrediente2 = new Ingrediente();
+        Ingrediente nuevoIngrediente = new Ingrediente("",0,0,0,0);
+        Ingrediente nuevoIngrediente2 = new Ingrediente("",0,0,0,0);
 
         nuevoIngrediente.Ingrediente("sal");
         valorClave=nuevoIngrediente.equals(nuevoIngrediente2);
