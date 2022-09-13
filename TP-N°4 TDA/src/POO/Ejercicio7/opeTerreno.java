@@ -18,7 +18,6 @@ public class opeTerreno {
         Terreno mistTerrenoS[] = new Terreno[4];
 
         for (int i = 0; i < mistTerrenoS.length; i++) {
-
             /*
              * if(i>0){
              * do{
@@ -61,8 +60,9 @@ public class opeTerreno {
                 case 2:
                     System.out.println("ingrese codigo de terreno");
                     BuscaCodigo = sc.nextInt();
+                    Terreno nuevOTerreno = new Terreno(BuscaCodigo);
                     for (int i = 0; i < mistTerrenoS.length; i++) {
-                        if (BuscaCodigo == mistTerrenoS[i].getCodigo()) {
+                        if (nuevOTerreno.equals(mistTerrenoS[i])) {
                             System.out.println();
                             System.out.println(mistTerrenoS[i]);
                             System.out.println();

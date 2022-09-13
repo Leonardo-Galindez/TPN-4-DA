@@ -8,14 +8,14 @@ public class testIngrediente {
         Scanner sc= new Scanner(System.in);
         System.out.println();
         boolean valorClave;
-        String nombre;
-        int cantidad,rta,unidad;
+        String nombre,unidad;
+        int cantidad,rta;
         double gramo,litro;
 
         valorClave=true;
         
-        Ingrediente nuevoIngrediente = new Ingrediente("",0,0,0,0);
-        Ingrediente nuevoIngrediente2 = new Ingrediente("",0,0,0,0);
+        Ingrediente nuevoIngrediente = new Ingrediente("",0,"");
+        Ingrediente nuevoIngrediente2 = new Ingrediente("",0,"");
 
         nuevoIngrediente.Ingrediente("sal");
         valorClave=nuevoIngrediente.equals(nuevoIngrediente2);
@@ -43,7 +43,7 @@ public class testIngrediente {
             case 1: 
 
                 System.out.println("Ingrese unidades");
-                unidad=sc.nextInt();
+                unidad=sc.next();
                 nuevoIngrediente.setMedidaUnidad(unidad);
 
             break;
@@ -51,14 +51,14 @@ public class testIngrediente {
 
                 System.out.println("Ingrese litros");
                 litro=sc.nextDouble();
-                nuevoIngrediente.setMedidaLitro(litro);
+               
 
             break;
             case 3: 
 
                 System.out.println("Ingrese gramos");
                 gramo=sc.nextDouble();
-                nuevoIngrediente.setMedidaGramo(gramo);
+                
 
             break;
             default:

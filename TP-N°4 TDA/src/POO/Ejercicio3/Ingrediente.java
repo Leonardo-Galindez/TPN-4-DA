@@ -4,26 +4,29 @@ public class Ingrediente {
 
     private String nombre;
     private int cantidad;
-    private int medidaUnidad;
-    private double medidaLitro;
-    private double medidaGramo;
+    private String medidaUnidad;
+    
 
 
     //Constructores
 
     public Ingrediente(String nom){
         this.nombre=nom;
+        this.cantidad=0;
+        this.medidaUnidad="";
+        
+
     }
 
-    public Ingrediente(String nom,int cant,int medU,int medL,int medG){
+    public Ingrediente(String nom,int cant,String medU){
 
         this.nombre=nom;
         this.cantidad=cant;
         this.medidaUnidad=medU;
-        this.medidaLitro=medL;
-        this.medidaGramo=medG;
+        
     }
 
+    
     //Observadores
 
     public String getNombre(){
@@ -34,24 +37,17 @@ public class Ingrediente {
         return cantidad;
     }
 
-    public int getMedidaUnidad(){
+    public String getMedidaUnidad(){
         return medidaUnidad;
     }
 
-    public double getMedidaLitro(){
-        return medidaLitro;
-    }
-
-    public double getMedidaGramo(){
-        return medidaGramo;
-    }
+   
     
     public String toString(){
         return "nombre:"+nombre+
                 "\ncantidad:"+cantidad+
-                "\nUnidades:"+medidaUnidad+
-                "\nLitros:"+medidaLitro+
-                "\nGramos"+medidaGramo;
+                "\nUnidades:"+medidaUnidad;
+
     }
 
     public boolean equals(Ingrediente ingre){
@@ -69,19 +65,13 @@ public class Ingrediente {
         this.cantidad=cant;
     }
 
-    public void setMedidaUnidad(int medU){
+    public void setMedidaUnidad(String medU){
         this.medidaUnidad=medU;
-    }
-
-    public void setMedidaLitro(double medL){
-        this.medidaLitro=medL;
-    }
-
-    public void setMedidaGramo(double medG){
-        this.medidaGramo=medG;
     }
 
     public void Ingrediente(String string) {
     }
+
+    
 
 }

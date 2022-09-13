@@ -1,7 +1,7 @@
 package POO.Ejercicio4;
 
 import java.util.Scanner;
-
+//dias restarlo a los dias del mes de la fecha hasta que sea menor a dias de ese mes
 public class TestFecha {
     public static void main(String[] args) {
 
