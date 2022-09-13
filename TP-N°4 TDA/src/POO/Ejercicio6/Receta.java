@@ -29,10 +29,6 @@ public class Receta {
         }else{
             System.out.println("El ingrediente no esta en la receta");
         }
-
-
-
-      
     }
 
     public static boolean VerificarIngre(Ingrediente []mIngrediente,String ingre){
