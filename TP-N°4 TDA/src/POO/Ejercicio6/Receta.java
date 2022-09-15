@@ -3,8 +3,6 @@ package POO.Ejercicio6;
 import POO.Ejercicio3.Ingrediente;
 import java.util.Scanner;
 
-import javax.sound.midi.MidiChannel;
-
 //probar con un while o verificacion de longitud
 public class Receta {
     public static void main(String[] args) {
@@ -29,10 +27,6 @@ public class Receta {
         }else{
             System.out.println("El ingrediente no esta en la receta");
         }
-
-
-
-      
     }
 
     public static boolean VerificarIngre(Ingrediente []mIngrediente,String ingre){
