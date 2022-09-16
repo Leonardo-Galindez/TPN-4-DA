@@ -65,6 +65,8 @@ public class Producto {
 
     // Comparadores
 
+    
+
     public boolean equals(Producto p) {
         return this.codigo == p.codigo;
     }
@@ -74,6 +76,7 @@ public class Producto {
     }
 
     // Propias del tipo
+
 
     public double CalcularCosto( int cant) {
         double costo;
