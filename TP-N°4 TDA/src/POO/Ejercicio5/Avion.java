@@ -1,4 +1,5 @@
 package POO.Ejercicio5;
+import POO.Ejercicio4.Fecha;
 
 public class Avion {
     // Atributos
@@ -8,6 +9,7 @@ public class Avion {
     private int CantAsientos;
     private int kilometros;
     private int velocidadPromedio;
+    private Fecha fechaMantenimiento;
 
     // Constructores
 
