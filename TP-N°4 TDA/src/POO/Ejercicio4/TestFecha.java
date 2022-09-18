@@ -40,7 +40,7 @@ public class TestFecha {
         dias = miFecha.diasTranscurridos(dia, mes, anio);
         System.out.println("Dias transcurridos:" + dias);
 
-        valorBisiesto = miFecha.esBisiesto(anio);
+        valorBisiesto = miFecha.esBisiesto();
         System.out.println("Es bisiesto:" + valorBisiesto);
 
         do {

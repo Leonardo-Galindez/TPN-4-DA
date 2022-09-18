@@ -4,28 +4,75 @@ public class Fecha {
 
     // Atributos
 
-    private int codigo;
     private int dia;
     private int mes;
     private int anio;
+    private boolean fechaCorrecta;
 
     // Constructores
-
-    public Fecha(int cod) {
-        this.codigo = cod;
+    public Fecha() {
+        this.dia = 1;
+        this.mes = 1;
+        this.anio = 1;
+        this.fechaCorrecta = true;
     }
 
-    public Fecha(int d, int m, int a) {
-        this.dia = d;
-        this.mes = m;
-        this.anio = a;
+    public Fecha(int elDia, int elMes, int elAnio) {
+        fechaCorrecta = true;
+
+        if (elAnio > 0 || elAnio < 10000)
+            anio = elAnio;
+        else
+            anio = 0;
+
+        if (elMes > 0 && elMes < 13)
+            mes = elMes;
+        else
+            mes = 0;
+
+        if (elDia > 31 || elDia < 1)
+            dia = 0;
+        else {
+            if (elDia < 29)
+                dia = elDia;
+            else {
+                switch (dia) {
+
+                    case 29:
+                        if (mes == 2) {
+                            if (esBisiesto())
+                                dia = elDia;
+                            else
+                                dia = 0;
+                        } else
+                            dia = elDia;
+                        break;
+
+                    case 30:
+                        if (mes == 2)
+                            dia = 0;
+                        else
+                            dia = elDia;
+                        break;
+
+                    case 31:
+                        if (mes == 2 || mes == 11 || mes == 4 || mes == 6 || mes == 9)
+                            dia = 0;
+                        else
+                            dia = elDia;
+                        break;
+                }
+            }
+        }
+
+        // o bien
+        if (anio == 0 || mes == 0 || anio == 0){
+            fechaCorrecta = false;
+        }
+
     }
 
     // Observadores
-
-    public int getCodigo() {
-        return codigo;
-    }
 
     public int getDia() {
         return dia;
@@ -43,29 +90,7 @@ public class Fecha {
         return dia + "/" + mes + "/" + anio;
     }
 
-    /*
-     * public boolean equals(){
-     * return
-     * }
-     */
-
     // Modificadores
-
-    public void setCodigo(int cod) {
-        this.codigo = cod;
-    }
-
-    public void setDia(int d) {
-        this.dia = d;
-    }
-
-    public void setMes(int m) {
-        this.mes = m;
-    }
-
-    public void setAnio(int a) {
-        this.anio = a;
-    }
 
     // Propias del tipo
 
@@ -99,12 +124,12 @@ public class Fecha {
         return valorFecha;
     }
 
-    public boolean esBisiesto(int a) {
+    public boolean esBisiesto() {
 
         boolean valorBi;
         valorBi = false;
 
-        if (a % 4 == 0) {
+        if (this.anio % 4 == 0) {
             valorBi = true;
         }
 
@@ -114,7 +139,7 @@ public class Fecha {
     public void calcularFecha(int dia, int mes, int anio, int d) {
         int diasTotal;
         boolean valorFecha;
-        valorFecha=false;
+        valorFecha = false;
 
         int[] Dias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -122,54 +147,26 @@ public class Fecha {
             Dias[1] = 29;
         }
 
-        diasTotal=dia+d;
+        diasTotal = dia + d;
 
-        while(!valorFecha){
-            
-            diasTotal=diasTotal-Dias[mes-1];
+        while (!valorFecha) {
+
+            diasTotal = diasTotal - Dias[mes - 1];
             mes++;
-            if(diasTotal<=Dias[mes-1]){
-                valorFecha=true;
-                this.dia=diasTotal;
-                this.mes=mes-1;
+            if (diasTotal <= Dias[mes - 1]) {
+                valorFecha = true;
+                this.dia = diasTotal;
+                this.mes = mes - 1;
             }
 
-            if(mes>11){
-                this.mes=1;
-                this.anio=this.anio+1;
-                mes=1;
+            if (mes > 11) {
+                this.mes = 1;
+                this.anio = this.anio + 1;
+                mes = 1;
             }
 
         }
 
-        /*restoAnio = mes;
-        dia = dia + d;
-        cantMes = dia / 30;
-        restoMes = dia % 30;
-
-        if (dia > 31) {
-
-            mes = mes + cantMes;
-
-            if (mes > 12) {
-
-                cantAnio = mes / 12;
-                restoAnio = mes % 12;
-                anio = anio + cantAnio;
-
-            }
-
-        if (restoMes == 0) {
-            this.dia = 1;
-        } else {
-            this.dia = restoMes;
-        }
-        if (restoAnio == 0) {
-            this.mes = 1;
-        } else {
-            this.mes = restoAnio;
-        }
-        this.anio = anio;*/
     }
 
 }

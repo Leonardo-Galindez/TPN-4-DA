@@ -16,16 +16,26 @@ public class Avion {
     public Avion(String id) {
 
         this.idAvion = id;
+        this.Modelo = 0;
+        this.CantAsientos = 0;
+        this.kilometros = 0;
+        this.velocidadPromedio = 0;
+        
+        Fecha fecha = new Fecha(0,0,0);
+        this.fechaMantenimiento=fecha;
 
     }
 
-    public Avion(String id, int mod, int cantA, int km, int velProm) {
+    public Avion(String id, int mod, int cantA, int km, int velProm,Fecha fechaMantenimiento) {
 
         this.idAvion = id;
         this.Modelo = mod;
         this.CantAsientos = cantA;
         this.kilometros = km;
         this.velocidadPromedio = velProm;
+        
+        Fecha fecha = new Fecha(0,0,0);
+        this.fechaMantenimiento=fecha;
 
     }
 

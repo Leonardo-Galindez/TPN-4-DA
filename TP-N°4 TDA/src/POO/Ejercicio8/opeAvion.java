@@ -1,7 +1,7 @@
 package POO.Ejercicio8;
 
 import POO.Ejercicio5.Avion;
-
+import POO.Ejercicio4.Fecha;
 import java.util.Scanner;
 
 public class opeAvion {
@@ -81,6 +81,9 @@ public class opeAvion {
 
     public static void CargaAvion(Avion[] misAviones) {
         int  Modelo, CantAsientos, kilometros, velocidadPromedio;
+        Fecha fechaMantenimiento;
+
+        fechaMantenimiento = new Fecha(15, 15, 2001);
         String idAvion;
         Scanner sc = new Scanner(System.in);
 
@@ -97,7 +100,7 @@ public class opeAvion {
             System.out.println("Ingrese velocidad promedio del avion");
             velocidadPromedio = sc.nextInt();
 
-            misAviones[i] = new Avion(idAvion, Modelo, CantAsientos, kilometros, velocidadPromedio);
+            misAviones[i] = new Avion(idAvion, Modelo, CantAsientos, kilometros, velocidadPromedio,fechaMantenimiento);
         }
     }
 }

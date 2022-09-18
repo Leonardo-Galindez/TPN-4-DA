@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TestAvion {
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
+        /*Scanner sc= new Scanner(System.in);
         int Modelo,CantAsientos,kilometros,velocidadPromedio,hora,km;
         String idAvion;
         System.out.println("Ingrese id del avion");
@@ -47,6 +47,7 @@ public class TestAvion {
         otroAvion1.setKilometros(km);
 
         System.out.println(otroAvion1.toString());
+        */
     }
 
 }
