@@ -21,7 +21,7 @@ public class Avion {
         this.kilometros = 0;
         this.velocidadPromedio = 0;
         
-        Fecha fecha = new Fecha(0,0,0);
+        Fecha fecha = new Fecha("9eW",0,0,0);
         this.fechaMantenimiento=fecha;
 
     }
@@ -33,8 +33,8 @@ public class Avion {
         this.CantAsientos = cantA;
         this.kilometros = km;
         this.velocidadPromedio = velProm;
-        
-        Fecha fecha = new Fecha(0,0,0);
+
+        Fecha fecha = new Fecha("9eW",0,0,0);
         this.fechaMantenimiento=fecha;
 
     }

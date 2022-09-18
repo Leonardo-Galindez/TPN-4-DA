@@ -1,6 +1,7 @@
 package POO.TP_TDA;
 
 import POO.Ejercicio5.Avion;
+import POO.Ejercicio4.Fecha;
 import java.util.Scanner;
 
 public class Mantenimiento {
@@ -12,17 +13,18 @@ public class Mantenimiento {
         cantAvion = sc.nextInt();
 
         Avion miAvion[] = new Avion[cantAvion];
+        Fecha Mantenimientos[] = new Fecha[cantAvion];
 
-        CargarArreglo(miAvion, cantAvion);
+        CargarArreglo(miAvion, cantAvion, Mantenimientos);
         System.out.println();
-        MostrarAvion(miAvion, cantAvion);
+        MostrarAvion(miAvion,Mantenimientos, cantAvion);
     }
 
-    public static void CargarArreglo(Avion[] miAvion, int cantAvion) {
+    public static void CargarArreglo(Avion[] miAvion, int cantAvion, Fecha[] Mantenimientos) {
 
         Scanner sc = new Scanner(System.in);
 
-        int tipo, idAvionInt, modelo, CantAsientos, kilometros, velocidadPromedio;
+        int tipo, idAvionInt, modelo, CantAsientos, kilometros, velocidadPromedio, dia, mes, anio;
         String idAvionString, idAvion;
         boolean valorClave, valorTipo;
 
@@ -33,8 +35,9 @@ public class Mantenimiento {
 
         for (int i = 0; i < cantAvion; i++) {
             Avion auxAvion;
+            
             do {
-                tipo =TipoAvion();
+                tipo = TipoAvion();
                 if (tipo > 0 && tipo <= 5) {
                     if (tipo > 0 && tipo <= 2) {
                         System.out.println("Ingrese id del Avion numerico");
@@ -56,12 +59,23 @@ public class Mantenimiento {
 
             System.out.println("Ingrese modelo del Avion");
             modelo = sc.nextInt();
-            System.out.println("Ingrese Cantidad de asientos del Avion");
-            CantAsientos = sc.nextInt();
+         System.out.println("Ingrese Cantidad de asientos del Avion");            CantAsientos = sc.nextInt();
             System.out.println("Ingrese kilometraje");
             kilometros = sc.nextInt();
             System.out.println("Ingrese velocidad Promedio del Avion");
             velocidadPromedio = sc.nextInt();
+
+            System.out.println("Ingrese Fecha mantenimiento");
+            Fecha Mantenimiento;
+            do {
+                System.out.println("Ingrese dia");
+                dia = sc.nextInt();
+                System.out.println("Ingrese mes");
+                mes = sc.nextInt();
+                System.out.println("Ingrese año");
+                anio = sc.nextInt();
+                Mantenimientos[i] = new Fecha(idAvion, dia, mes, anio);
+            } while (!Mantenimientos[i].esFechaCorrecta());
 
             miAvion[i] = auxAvion;
             miAvion[i].setModelo(modelo);
@@ -70,28 +84,33 @@ public class Mantenimiento {
             miAvion[i].setVelocidadPromedio(velocidadPromedio);
 
         }
+
+        
     }
 
-    public static int  TipoAvion(){
+
+    public static int TipoAvion() {
         int rta;
 
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("Uso general--------------------------------1");
         System.out.println("Gubernamental------------------------------2");
         System.out.println("Experimental-------------------------------3");
         System.out.println("Aeronave deportiva liviana-----------------4");
         System.out.println("Aeronave deportiva liviana experimental----5");
-        rta=sc.nextInt();
+        rta = sc.nextInt();
 
         return rta;
     }
 
-    public static void MostrarAvion(Avion[] miAvion,int cant) {
+    public static void MostrarAvion(Avion[] miAvion,Fecha []Mantenimiento, int cant) {
 
         for (int i = 0; i < cant; i++) {
 
             System.out.println(miAvion[i].toString());
+            System.out.println(Mantenimiento[i].toString());
+            
 
             System.out.println("");
         }
@@ -100,7 +119,7 @@ public class Mantenimiento {
     public static boolean VerificarID(Avion auxAvion, Avion[] miAvion, int cantAvion) {
         boolean repetido, noesNulo;
         int i;
-        
+
         i = 0;
         repetido = false;
         noesNulo = false;

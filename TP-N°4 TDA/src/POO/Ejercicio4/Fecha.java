@@ -3,76 +3,90 @@ package POO.Ejercicio4;
 public class Fecha {
 
     // Atributos
-
+    private String codigo;
     private int dia;
     private int mes;
     private int anio;
     private boolean fechaCorrecta;
 
     // Constructores
-    public Fecha() {
+    public Fecha(String cod) {
+        this.codigo=cod;
         this.dia = 1;
         this.mes = 1;
         this.anio = 1;
         this.fechaCorrecta = true;
     }
 
-    public Fecha(int elDia, int elMes, int elAnio) {
-        fechaCorrecta = true;
+    public Fecha(String cod,int elDia, int elMes, int elAnio) {
+        this.codigo=cod;
+        this.fechaCorrecta = true;
 
-        if (elAnio > 0 || elAnio < 10000)
-            anio = elAnio;
-        else
-            anio = 0;
+        if (elAnio > 0 || elAnio < 10000) {
+            this.anio = elAnio;
+        } else {
+            this.anio = 0;
+            if (elMes > 0 && elMes < 13) {
+                this.mes = elMes;
+            } else {
+                this.mes = 0;
+            }
+        }
 
-        if (elMes > 0 && elMes < 13)
-            mes = elMes;
-        else
-            mes = 0;
+        if (elDia > 31 || elDia < 1) {
+            this.dia = 0;
+        } else {
+            if (elDia < 29) {
 
-        if (elDia > 31 || elDia < 1)
-            dia = 0;
-        else {
-            if (elDia < 29)
-                dia = elDia;
-            else {
-                switch (dia) {
+                this.dia = elDia;
+
+            } else {
+                switch (this.dia) {
 
                     case 29:
-                        if (mes == 2) {
-                            if (esBisiesto())
-                                dia = elDia;
-                            else
-                                dia = 0;
-                        } else
-                            dia = elDia;
+                        if (this.mes == 2) {
+                            if (esBisiesto()) {
+                                this.dia = elDia;
+                            } else {
+
+                                this.dia = 0;
+                            }
+                        } else {
+                            this.dia = elDia;
+                        }
                         break;
 
                     case 30:
-                        if (mes == 2)
-                            dia = 0;
-                        else
-                            dia = elDia;
+                        if (this.mes == 2) {
+                            this.dia = 0;
+                        } else {
+                            this.dia = elDia;
+                        }
                         break;
 
                     case 31:
-                        if (mes == 2 || mes == 11 || mes == 4 || mes == 6 || mes == 9)
-                            dia = 0;
-                        else
-                            dia = elDia;
+                        if (this.mes == 2 || this.mes == 11 || this.mes == 4 || this.mes == 6 || mes == 9) {
+                            this.dia = 0;
+                        } else {
+                            this.dia = elDia;
+                        }
                         break;
                 }
             }
         }
 
-        // o bien
-        if (anio == 0 || mes == 0 || anio == 0){
-            fechaCorrecta = false;
+        
+        if (this.dia == 0 || mes == 0 || anio == 0) {
+            this.fechaCorrecta = false;
         }
 
     }
 
     // Observadores
+
+    public String getCodigo() {
+        return codigo;
+    }
 
     public int getDia() {
         return dia;
@@ -92,6 +106,8 @@ public class Fecha {
 
     // Modificadores
 
+    
+
     // Propias del tipo
 
     public int diasTranscurridos(int d, int m, int a) {
@@ -110,6 +126,10 @@ public class Fecha {
         }
 
         return diasTotal - d;
+    }
+
+    public boolean esFechaCorrecta() {
+        return fechaCorrecta == true;
     }
 
     public boolean esFechaAnterio(int d, int m, int a) {

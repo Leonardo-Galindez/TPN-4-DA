@@ -29,7 +29,7 @@ public class TestFecha {
             }
 
         } while (!valorFecha);
-        Fecha miFecha = new Fecha(dia, mes, anio);
+        Fecha miFecha = new Fecha("",dia, mes, anio);
         System.out.println("Ingrese dias para agregar");
         DiasTotales = sc.nextInt();
 
@@ -61,7 +61,7 @@ public class TestFecha {
 
         } while (!valorFecha);
 
-        Fecha miFecha2 = new Fecha(dia, mes, anio);
+        Fecha miFecha2 = new Fecha("",dia, mes, anio);
 
         if (miFecha.esFechaAnterio(miFecha2.getDia(), miFecha2.getMes(), miFecha2.getAnio())) {
             System.out.println(miFecha2.toString() + ":es anterior a:" + miFecha.toString());

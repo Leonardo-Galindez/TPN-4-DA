@@ -83,7 +83,7 @@ public class opeAvion {
         int  Modelo, CantAsientos, kilometros, velocidadPromedio;
         Fecha fechaMantenimiento;
 
-        fechaMantenimiento = new Fecha(15, 15, 2001);
+        fechaMantenimiento = new Fecha("",15, 15, 2001);
         String idAvion;
         Scanner sc = new Scanner(System.in);
 
