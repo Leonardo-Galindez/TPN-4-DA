@@ -10,28 +10,23 @@ public class Fecha {
     private boolean fechaCorrecta;
 
     // Constructores
-    public Fecha(String cod) {
-        this.codigo=cod;
-        this.dia = 1;
-        this.mes = 1;
-        this.anio = 1;
-        this.fechaCorrecta = true;
-    }
 
-    public Fecha(String cod,int elDia, int elMes, int elAnio) {
-        this.codigo=cod;
+    public Fecha(String cod, int elDia, int elMes, int elAnio) {
+        this.codigo = cod;
         this.fechaCorrecta = true;
 
         if (elAnio > 0 || elAnio < 10000) {
             this.anio = elAnio;
         } else {
             this.anio = 0;
-            if (elMes > 0 && elMes < 13) {
+        }
+
+        if (elMes > 0 && elMes < 13) {
                 this.mes = elMes;
             } else {
                 this.mes = 0;
-            }
         }
+        
 
         if (elDia > 31 || elDia < 1) {
             this.dia = 0;
@@ -75,7 +70,6 @@ public class Fecha {
             }
         }
 
-        
         if (this.dia == 0 || mes == 0 || anio == 0) {
             this.fechaCorrecta = false;
         }
@@ -105,8 +99,6 @@ public class Fecha {
     }
 
     // Modificadores
-
-    
 
     // Propias del tipo
 

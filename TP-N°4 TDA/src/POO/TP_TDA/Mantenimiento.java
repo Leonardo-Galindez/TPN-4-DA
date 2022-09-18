@@ -17,7 +17,7 @@ public class Mantenimiento {
 
         CargarArreglo(miAvion, cantAvion, Mantenimientos);
         System.out.println();
-        MostrarAvion(miAvion,Mantenimientos, cantAvion);
+        MostrarAvion(miAvion, Mantenimientos, cantAvion);
     }
 
     public static void CargarArreglo(Avion[] miAvion, int cantAvion, Fecha[] Mantenimientos) {
@@ -35,7 +35,7 @@ public class Mantenimiento {
 
         for (int i = 0; i < cantAvion; i++) {
             Avion auxAvion;
-            
+
             do {
                 tipo = TipoAvion();
                 if (tipo > 0 && tipo <= 5) {
@@ -59,14 +59,15 @@ public class Mantenimiento {
 
             System.out.println("Ingrese modelo del Avion");
             modelo = sc.nextInt();
-         System.out.println("Ingrese Cantidad de asientos del Avion");            CantAsientos = sc.nextInt();
+            System.out.println("Ingrese Cantidad de asientos del Avion");
+            CantAsientos = sc.nextInt();
             System.out.println("Ingrese kilometraje");
             kilometros = sc.nextInt();
             System.out.println("Ingrese velocidad Promedio del Avion");
             velocidadPromedio = sc.nextInt();
 
             System.out.println("Ingrese Fecha mantenimiento");
-            Fecha Mantenimiento;
+
             do {
                 System.out.println("Ingrese dia");
                 dia = sc.nextInt();
@@ -82,12 +83,11 @@ public class Mantenimiento {
             miAvion[i].setCantiAsientos(CantAsientos);
             miAvion[i].setKilometros(kilometros);
             miAvion[i].setVelocidadPromedio(velocidadPromedio);
+            miAvion[i].setfechaMan(Mantenimientos[i]);
 
         }
 
-        
     }
-
 
     public static int TipoAvion() {
         int rta;
@@ -104,13 +104,12 @@ public class Mantenimiento {
         return rta;
     }
 
-    public static void MostrarAvion(Avion[] miAvion,Fecha []Mantenimiento, int cant) {
+    public static void MostrarAvion(Avion[] miAvion, Fecha[] Mantenimiento, int cant) {
 
         for (int i = 0; i < cant; i++) {
 
             System.out.println(miAvion[i].toString());
             System.out.println(Mantenimiento[i].toString());
-            
 
             System.out.println("");
         }

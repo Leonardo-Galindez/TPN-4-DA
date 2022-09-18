@@ -9,8 +9,8 @@ public class Avion {
     private int CantAsientos;
     private int kilometros;
     private int velocidadPromedio;
-    private Fecha fechaMantenimiento;
-
+    private Fecha fechaMan;
+    
     // Constructores
 
     public Avion(String id) {
@@ -20,10 +20,7 @@ public class Avion {
         this.CantAsientos = 0;
         this.kilometros = 0;
         this.velocidadPromedio = 0;
-        
-        Fecha fecha = new Fecha("9eW",0,0,0);
-        this.fechaMantenimiento=fecha;
-
+    
     }
 
     public Avion(String id, int mod, int cantA, int km, int velProm,Fecha fechaMantenimiento) {
@@ -33,10 +30,6 @@ public class Avion {
         this.CantAsientos = cantA;
         this.kilometros = km;
         this.velocidadPromedio = velProm;
-
-        Fecha fecha = new Fecha("9eW",0,0,0);
-        this.fechaMantenimiento=fecha;
-
     }
 
     // Observadores
@@ -93,6 +86,10 @@ public class Avion {
 
     public void setVelocidadPromedio(int velProm) {
         this.velocidadPromedio = velProm;
+    }
+
+    public void setfechaMan(Fecha f){
+        this.fechaMan=f;
     }
 
     // Propias del tipo
