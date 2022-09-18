@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class TestAvion {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        int idAvion,Modelo,CantAsientos,kilometros,velocidadPromedio,hora,km;
-        
+        int Modelo,CantAsientos,kilometros,velocidadPromedio,hora,km;
+        String idAvion;
         System.out.println("Ingrese id del avion");
-        idAvion=sc.nextInt();
+        idAvion=sc.next();
         System.out.println("Ingrese modelo del avion");
         Modelo=sc.nextInt();
         System.out.println("Ingrese cantidad de asientos del avion");
@@ -22,7 +22,7 @@ public class TestAvion {
         
         do{
             System.out.println("Ingrese id del avion");
-            idAvion=sc.nextInt();
+            idAvion=sc.next();
         }while(otroAvion1.equals(idAvion));
 
         System.out.println("Ingrese modelo del avion");

@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class opeAvion {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int rta, mayorVelo, posMayor, idBusca, modeloBusa, PromKmTotal, acumKm;
+        int rta, mayorVelo, posMayor,  modeloBusa, PromKmTotal, acumKm;
+        String idBusca;
         acumKm = 0;
         boolean valorMenu;
         valorMenu = false;
@@ -29,7 +30,7 @@ public class opeAvion {
                     break;
                 case 2:
                     System.out.println("Ingrese id del Avion");
-                    idBusca = sc.nextInt();
+                    idBusca = sc.next();
                     for (int i = 0; i < misAviones.length; i++) {
                         if (idBusca == misAviones[i].getIdAvion()) {
                             System.out.println("La cantidad de asientos es:" + misAviones[i].getCantiAsientos());
@@ -79,13 +80,14 @@ public class opeAvion {
     }
 
     public static void CargaAvion(Avion[] misAviones) {
-        int idAvion, Modelo, CantAsientos, kilometros, velocidadPromedio;
+        int  Modelo, CantAsientos, kilometros, velocidadPromedio;
+        String idAvion;
         Scanner sc = new Scanner(System.in);
 
         for (int i = 0; i < misAviones.length; i++) {
 
             System.out.println("Ingrese id del avion");
-            idAvion = sc.nextInt();
+            idAvion = sc.next();
             System.out.println("Ingrese Modelo del avion");
             Modelo = sc.nextInt();
             System.out.println("Ingrese cantidad de asientos del avion");
