@@ -112,7 +112,9 @@ public class Fecha {
     }
 
     public void calcularFecha(int dia, int mes, int anio, int d) {
-        int cantMes, restoMes, cantAnio, restoAnio;
+        int diasTotal;
+        boolean valorFecha;
+        valorFecha=false;
 
         int[] Dias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -120,7 +122,27 @@ public class Fecha {
             Dias[1] = 29;
         }
 
-        restoAnio = mes;
+        diasTotal=dia+d;
+
+        while(!valorFecha){
+            
+            diasTotal=diasTotal-Dias[mes-1];
+            mes++;
+            if(diasTotal<=Dias[mes-1]){
+                valorFecha=true;
+                this.dia=diasTotal;
+                this.mes=mes-1;
+            }
+
+            if(mes>11){
+                this.mes=1;
+                this.anio=this.anio+1;
+                mes=1;
+            }
+
+        }
+
+        /*restoAnio = mes;
         dia = dia + d;
         cantMes = dia / 30;
         restoMes = dia % 30;
@@ -136,7 +158,6 @@ public class Fecha {
                 anio = anio + cantAnio;
 
             }
-        }
 
         if (restoMes == 0) {
             this.dia = 1;
@@ -148,7 +169,7 @@ public class Fecha {
         } else {
             this.mes = restoAnio;
         }
-        this.anio = anio;
+        this.anio = anio;*/
     }
 
 }
