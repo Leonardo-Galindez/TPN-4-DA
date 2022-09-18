@@ -14,48 +14,56 @@ public class Mantenimiento {
         Avion miAvion[] = new Avion[cantAvion];
 
         CargarArreglo(miAvion, cantAvion);
+        System.out.println();
+        MostrarAvion(miAvion, cantAvion);
     }
 
     public static void CargarArreglo(Avion[] miAvion, int cantAvion) {
+
         Scanner sc = new Scanner(System.in);
 
-        int tipo, idAvionInt,modelo,CantAsientos,kilometros,velocidadPromedio;
+        int tipo, idAvionInt, modelo, CantAsientos, kilometros, velocidadPromedio;
         String idAvionString, idAvion;
-        boolean valorClave;
+        boolean valorClave, valorTipo;
 
+        valorTipo = false;
         valorClave = false;
         idAvionInt = 0;
         idAvionString = "";
-        Avion auxAvion;
 
         for (int i = 0; i < cantAvion; i++) {
+            Avion auxAvion;
             do {
-                System.out.println("Ingrese tipo Avion");
-                tipo = sc.nextInt();
-                if (tipo > 2) {
-                    System.out.println("Ingrese id del Avion No numerico");
-                    idAvionString = sc.next();
+                tipo =TipoAvion();
+                if (tipo > 0 && tipo <= 5) {
+                    if (tipo > 0 && tipo <= 2) {
+                        System.out.println("Ingrese id del Avion numerico");
+                        idAvionInt = sc.nextInt();
+                    } else {
+                        System.out.println("Ingrese id del Avion No numerico");
+                        idAvionString = sc.next();
+                    }
                 } else {
-                    System.out.println("Ingrese id del Avion numerico");
-                    idAvionInt = sc.nextInt();
+                    valorTipo = true;
                 }
-                idAvion = TipoAvion(tipo, idAvionInt, idAvionString);
+
+                idAvion = SeleccionarTipoAvion(tipo, idAvionInt, idAvionString);
                 auxAvion = new Avion(idAvion);
 
                 valorClave = VerificarID(auxAvion, miAvion, cantAvion);
 
-            } while (tipo <= 5 && tipo > 0 && valorClave);
+            } while (valorClave || valorTipo);
 
             System.out.println("Ingrese modelo del Avion");
-            modelo=sc.nextInt();
+            modelo = sc.nextInt();
             System.out.println("Ingrese Cantidad de asientos del Avion");
-            CantAsientos=sc.nextInt();
+            CantAsientos = sc.nextInt();
             System.out.println("Ingrese kilometraje");
-            kilometros=sc.nextInt();
+            kilometros = sc.nextInt();
             System.out.println("Ingrese velocidad Promedio del Avion");
-            velocidadPromedio=sc.nextInt();
+            velocidadPromedio = sc.nextInt();
 
-            miAvion[i]=auxAvion;
+            miAvion[i] = auxAvion;
             miAvion[i].setModelo(modelo);
             miAvion[i].setCantiAsientos(CantAsientos);
             miAvion[i].setKilometros(kilometros);
@@ -64,9 +72,35 @@ public class Mantenimiento {
         }
     }
 
+    public static int  TipoAvion(){
+        int rta;
+
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Uso general--------------------------------1");
+        System.out.println("Gubernamental------------------------------2");
+        System.out.println("Experimental-------------------------------3");
+        System.out.println("Aeronave deportiva liviana-----------------4");
+        System.out.println("Aeronave deportiva liviana experimental----5");
+        rta=sc.nextInt();
+
+        return rta;
+    }
+
+    public static void MostrarAvion(Avion[] miAvion,int cant) {
+
+        for (int i = 0; i < cant; i++) {
+
+            System.out.println(miAvion[i].toString());
+
+            System.out.println("");
+        }
+    }
+
     public static boolean VerificarID(Avion auxAvion, Avion[] miAvion, int cantAvion) {
         boolean repetido, noesNulo;
         int i;
+        
         i = 0;
         repetido = false;
         noesNulo = false;
@@ -82,7 +116,7 @@ public class Mantenimiento {
         return repetido;
     }
 
-    public static String TipoAvion(int tipo, int idAvionInt, String idAvionString) {
+    public static String SeleccionarTipoAvion(int tipo, int idAvionInt, String idAvionString) {
 
         String idAvion;
 
