@@ -5,7 +5,7 @@ public class Avion {
     // Atributos
 
     private String idAvion;
-    private int Modelo;
+    private String Modelo;
     private int CantAsientos;
     private int kilometros;
     private int velocidadPromedio;
@@ -16,14 +16,14 @@ public class Avion {
     public Avion(String id) {
 
         this.idAvion = id;
-        this.Modelo = 0;
+        this.Modelo = "";
         this.CantAsientos = 0;
         this.kilometros = 0;
         this.velocidadPromedio = 0;
     
     }
 
-    public Avion(String id, int mod, int cantA, int km, int velProm,Fecha fechaMantenimiento) {
+    public Avion(String id, String mod, int cantA, int km, int velProm,Fecha fechaMantenimiento) {
 
         this.idAvion = id;
         this.Modelo = mod;
@@ -38,7 +38,7 @@ public class Avion {
         return idAvion;
     }
 
-    public int getModelo() {
+    public String getModelo() {
         return Modelo;
     }
 
@@ -53,13 +53,18 @@ public class Avion {
     public int getVelocidadPromedio() {
         return velocidadPromedio;
     }
+    
+    public Fecha getFechaMan() {
+        return fechaMan;
+    }
 
     public String toString() {
         return "Id:" + idAvion +
                 "\nModelo:" + Modelo +
                 "\nCantidad de asientos:" + CantAsientos +
                 "\nkilometraje:" + kilometros +
-                "\nvelocidad promedio:" + velocidadPromedio;
+                "\nvelocidad promedio:" + velocidadPromedio+
+                "\nUltimo Mantenimiento:" +fechaMan;                
     }
 
     public boolean equals(Avion a) {
@@ -72,7 +77,7 @@ public class Avion {
         this.idAvion = id;
     }
 
-    public void setModelo(int mod) {
+    public void setModelo(String mod) {
         this.Modelo = mod;
     }
 

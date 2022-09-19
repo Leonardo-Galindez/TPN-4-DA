@@ -10,6 +10,12 @@ public class Fecha {
     private boolean fechaCorrecta;
 
     // Constructores
+    public Fecha (){
+        codigo="";
+        dia=0;
+        mes=0;
+        anio=0;
+    }
 
     public Fecha(String cod, int elDia, int elMes, int elAnio) {
         this.codigo = cod;
@@ -151,6 +157,7 @@ public class Fecha {
     public void calcularFecha(int dia, int mes, int anio, int d) {
         int diasTotal;
         boolean valorFecha;
+
         valorFecha = false;
 
         int[] Dias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -160,24 +167,31 @@ public class Fecha {
         }
 
         diasTotal = dia + d;
-
-        while (!valorFecha) {
-
-            diasTotal = diasTotal - Dias[mes - 1];
-            mes++;
-            if (diasTotal <= Dias[mes - 1]) {
-                valorFecha = true;
-                this.dia = diasTotal;
-                this.mes = mes - 1;
+       
+            while (!valorFecha ) {
+                if(diasTotal>31){
+                    diasTotal = diasTotal - Dias[mes - 1];
+                }
+                
+                if(diasTotal<0){
+                    diasTotal=diasTotal*-1;
+                }
+                mes++;
+                if (diasTotal <= Dias[mes - 1]) {
+                    valorFecha = true;
+                    this.dia = diasTotal;
+                    this.mes = mes - 1;
+                }
+    
+                if (mes > 11) {
+                    this.mes = 1;
+                    this.anio = this.anio + 1;
+                    mes = 1;
+                }
+    
             }
-
-            if (mes > 11) {
-                this.mes = 1;
-                this.anio = this.anio + 1;
-                mes = 1;
-            }
-
-        }
+        
+        
 
     }
 
