@@ -18,8 +18,7 @@ public class Mantenimiento {
         CargarArreglo(miAvion, cantAvion, Mantenimientos);
         System.out.println();
         MostrarAvion(miAvion, Mantenimientos, cantAvion);
-<<<<<<< HEAD
-=======
+
 
         int rta, mayorVelo, posMayor, PromKmTotal, acumKm;
         String idBusca, modeloBusa;
@@ -119,7 +118,7 @@ public class Mantenimiento {
                     break;
             }
         } while (!valorMenu);
->>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
+
     }
 
     public static void CargarArreglo(Avion[] miAvion, int cantAvion, Fecha[] Mantenimientos) {
@@ -160,11 +159,11 @@ public class Mantenimiento {
             } while (valorClave || valorTipo);
 
             System.out.println("Ingrese modelo del Avion");
-<<<<<<< HEAD
-            modelo = sc.nextInt();
-=======
+
             modelo = sc.next();
->>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
+
+            modelo = sc.next();
+
             System.out.println("Ingrese Cantidad de asientos del Avion");
             CantAsientos = sc.nextInt();
             System.out.println("Ingrese kilometraje");
@@ -195,8 +194,7 @@ public class Mantenimiento {
 
     }
 
-<<<<<<< HEAD
-=======
+
     public static int Menu() {
         Scanner sc = new Scanner(System.in);
         int rta;
@@ -213,7 +211,7 @@ public class Mantenimiento {
 
     }
 
->>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
+
     public static int TipoAvion() {
         int rta;
 
@@ -234,10 +232,10 @@ public class Mantenimiento {
         for (int i = 0; i < cant; i++) {
 
             System.out.println(miAvion[i].toString());
-<<<<<<< HEAD
+
             System.out.println(Mantenimiento[i].toString());
-=======
->>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
+
+
 
             System.out.println("");
         }

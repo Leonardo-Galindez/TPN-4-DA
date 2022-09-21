@@ -10,20 +10,20 @@ public class Fecha {
     private boolean fechaCorrecta;
 
     // Constructores
-<<<<<<< HEAD
+
     public Fecha(String cod) {
         this.codigo = cod;
         this.dia = 1;
         this.mes = 1;
         this.anio = 1;
         this.fechaCorrecta = true;
-=======
+    }
     public Fecha (){
         codigo="";
         dia=0;
         mes=0;
         anio=0;
->>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
+
     }
 
     public Fecha(String cod, int elDia, int elMes, int elAnio) {
@@ -133,10 +133,7 @@ public class Fecha {
         return ((dia==f.dia) && (mes==f.mes) && (anio == f.anio));
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
     // Propias del tipo
 
     public int diasTranscurridos(int d, int m, int a) {
