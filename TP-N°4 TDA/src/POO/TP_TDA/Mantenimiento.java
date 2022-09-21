@@ -20,7 +20,7 @@ public class Mantenimiento {
         MostrarAvion(miAvion, Mantenimientos, cantAvion);
 
 
-        int rta, mayorVelo, posMayor, PromKmTotal, acumKm;
+        int rta, mayorVelo, posMayor, PromKmTotal, acumKm,contModelo;
         String idBusca, modeloBusa;
         acumKm = 0;
         boolean valorMenu;
@@ -53,11 +53,13 @@ public class Mantenimiento {
                 case 3:
                     System.out.println("Ingrese modelo del Avion");
                     modeloBusa = sc.next();
+                    contModelo=0;
                     for (int i = 0; i < miAvion.length; i++) {
                         if (modeloBusa.equals((miAvion[i].getModelo()))) {
-                            System.out.println(miAvion[i].toString());
+                            contModelo++;
                         }
                     }
+                    System.out.println("La cantidad de Aviones que hay de:" + modeloBusa+" son:"+contModelo);
                     break;
                 case 4:
                     for (int i = 0; i < miAvion.length; i++) {
@@ -92,7 +94,7 @@ public class Mantenimiento {
                                     auxFecha = new Fecha();
                                     auxFecha = miAvion[i].getFechaMan();
                                     auxFecha.calcularFecha(auxFecha.getDia(), auxFecha.getMes(), auxFecha.getAnio(),
-                                            30);
+                                            15);
                                     System.out.println("El proximo Mantenimiento del Avion " + miAvion[i].getIdAvion()
                                             + " es el:" + miAvion[i].getFechaMan());
 
@@ -162,7 +164,6 @@ public class Mantenimiento {
 
             modelo = sc.next();
 
-            modelo = sc.next();
 
             System.out.println("Ingrese Cantidad de asientos del Avion");
             CantAsientos = sc.nextInt();
@@ -232,10 +233,6 @@ public class Mantenimiento {
         for (int i = 0; i < cant; i++) {
 
             System.out.println(miAvion[i].toString());
-
-            System.out.println(Mantenimiento[i].toString());
-
-
 
             System.out.println("");
         }
