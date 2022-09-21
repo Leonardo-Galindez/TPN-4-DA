@@ -85,18 +85,28 @@ public class Mantenimiento {
                                 auxFecha.calcularFecha(auxFecha.getDia(), auxFecha.getMes(), auxFecha.getAnio(), 30);
                                 System.out.println("El proximo Mantenimiento del Avion " + miAvion[i].getIdAvion()
                                         + " es el:" + miAvion[i].getFechaMan());
+                            } else {
+
+                                if (miAvion[i].getKilometros() > 100000) {
+                                    auxFecha = new Fecha();
+                                    auxFecha = miAvion[i].getFechaMan();
+                                    auxFecha.calcularFecha(auxFecha.getDia(), auxFecha.getMes(), auxFecha.getAnio(),
+                                            30);
+                                    System.out.println("El proximo Mantenimiento del Avion " + miAvion[i].getIdAvion()
+                                            + " es el:" + miAvion[i].getFechaMan());
+
+                                }
+                            }
+                            if (miAvion[i].getModelo().equals("AirBus")) {
+
+                                auxFecha = miAvion[i].getFechaMan();
+                                auxFecha.calcularFecha(auxFecha.getDia(), auxFecha.getMes(), auxFecha.getAnio(), 4);
+                                System.out.println("El proximo Mantenimiento del Avion " + miAvion[i].getIdAvion()
+                                        + " es el:" + miAvion[i].getFechaMan());
 
                             }
-                        }
-                        if (miAvion[i].getModelo().equals("AirBus")) {
-
-                            auxFecha = miAvion[i].getFechaMan();
-                            auxFecha.calcularFecha(auxFecha.getDia(), auxFecha.getMes(), auxFecha.getAnio(), 4);
-                            System.out.println("El proximo Mantenimiento del Avion " + miAvion[i].getIdAvion()
-                                    + " es el:" + miAvion[i].getFechaMan());
 
                         }
-
                     }
                     break;
                 case 0:
