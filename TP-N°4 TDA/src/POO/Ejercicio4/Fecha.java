@@ -10,12 +10,20 @@ public class Fecha {
     private boolean fechaCorrecta;
 
     // Constructores
+<<<<<<< HEAD
     public Fecha(String cod) {
         this.codigo = cod;
         this.dia = 1;
         this.mes = 1;
         this.anio = 1;
         this.fechaCorrecta = true;
+=======
+    public Fecha (){
+        codigo="";
+        dia=0;
+        mes=0;
+        anio=0;
+>>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
     }
 
     public Fecha(String cod, int elDia, int elMes, int elAnio) {
@@ -26,12 +34,14 @@ public class Fecha {
             this.anio = elAnio;
         } else {
             this.anio = 0;
-            if (elMes > 0 && elMes < 13) {
+        }
+
+        if (elMes > 0 && elMes < 13) {
                 this.mes = elMes;
             } else {
                 this.mes = 0;
-            }
         }
+        
 
         if (elDia > 31 || elDia < 1) {
             this.dia = 0;
@@ -123,7 +133,10 @@ public class Fecha {
         return ((dia==f.dia) && (mes==f.mes) && (anio == f.anio));
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ba6f856888b3f8aaa366dd5f2ff0acb7ebe6292
     // Propias del tipo
 
     public int diasTranscurridos(int d, int m, int a) {
@@ -175,6 +188,7 @@ public class Fecha {
     public void calcularFecha(int dia, int mes, int anio, int d) {
         int diasTotal;
         boolean valorFecha;
+
         valorFecha = false;
 
         int[] Dias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -184,24 +198,31 @@ public class Fecha {
         }
 
         diasTotal = dia + d;
-
-        while (!valorFecha) {
-
-            diasTotal = diasTotal - Dias[mes - 1];
-            mes++;
-            if (diasTotal <= Dias[mes - 1]) {
-                valorFecha = true;
-                this.dia = diasTotal;
-                this.mes = mes - 1;
+       
+            while (!valorFecha ) {
+                if(diasTotal>31){
+                    diasTotal = diasTotal - Dias[mes - 1];
+                }
+                
+                if(diasTotal<0){
+                    diasTotal=diasTotal*-1;
+                }
+                mes++;
+                if (diasTotal <= Dias[mes - 1]) {
+                    valorFecha = true;
+                    this.dia = diasTotal;
+                    this.mes = mes - 1;
+                }
+    
+                if (mes > 11) {
+                    this.mes = 1;
+                    this.anio = this.anio + 1;
+                    mes = 1;
+                }
+    
             }
-
-            if (mes > 11) {
-                this.mes = 1;
-                this.anio = this.anio + 1;
-                mes = 1;
-            }
-
-        }
+        
+        
 
     }
 

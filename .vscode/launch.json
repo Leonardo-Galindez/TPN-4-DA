@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch testTerreno",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio1.testTerreno",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch testProducto",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio10.testProducto",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch testMascota",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio2.testMascota",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch testIngrediente",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio3.testIngrediente",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestFecha",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio4.TestFecha",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestAvion",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio5.TestAvion",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Receta",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio6.Receta",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch opeTerreno",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio7.opeTerreno",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch opeAvion",
+            "request": "launch",
+            "mainClass": "POO.Ejercicio8.opeAvion",
+            "projectName": "TPN-4-DA_4013b70f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Mantenimiento",
+            "request": "launch",
+            "mainClass": "POO.TP_TDA.Mantenimiento",
+            "projectName": "TPN-4-DA_4013b70f"
+        }
+    ]
+}
