@@ -11,15 +11,15 @@ public class Fecha {
 
     // Constructores
     public Fecha(String cod) {
-        this.codigo=cod;
+        this.codigo = cod;
         this.dia = 1;
         this.mes = 1;
         this.anio = 1;
         this.fechaCorrecta = true;
     }
 
-    public Fecha(String cod,int elDia, int elMes, int elAnio) {
-        this.codigo=cod;
+    public Fecha(String cod, int elDia, int elMes, int elAnio) {
+        this.codigo = cod;
         this.fechaCorrecta = true;
 
         if (elAnio > 0 || elAnio < 10000) {
@@ -75,7 +75,6 @@ public class Fecha {
             }
         }
 
-        
         if (this.dia == 0 || mes == 0 || anio == 0) {
             this.fechaCorrecta = false;
         }
@@ -105,8 +104,25 @@ public class Fecha {
     }
 
     // Modificadores
+    //hacer validaciones al los set
+    public void setDia(int d) {
+        this.dia = d;
+    }
 
-    
+    public void setMes(int m) {
+        this.mes = m;
+    }
+
+    public void setAnio(int a) {
+        this.anio = a;
+    }
+
+    //Comparadores
+
+    public boolean equals(Fecha f){
+        return ((dia==f.dia) && (mes==f.mes) && (anio == f.anio));
+    }
+
 
     // Propias del tipo
 
