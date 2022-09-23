@@ -116,7 +116,18 @@ public class Fecha {
     // Modificadores
     //hacer validaciones al los set
     public void setDia(int d) {
-        this.dia = d;
+      
+        //esFechavalida
+        //esfecha){
+        
+            //validacion dia
+
+        if(d<32 && d>0){
+            this.dia=d;
+        }else{
+            this.dia=0;
+        }
+        
     }
 
     public void setMes(int m) {
@@ -130,7 +141,7 @@ public class Fecha {
     //Comparadores
 
     public boolean equals(Fecha f){
-        return ((dia==f.dia) && (mes==f.mes) && (anio == f.anio));
+        return ((this.dia==f.dia) && (this.mes==f.mes) && (this.anio == f.anio));
     }
 
 

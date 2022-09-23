@@ -20,6 +20,7 @@ public class Avion {
         this.CantAsientos = 0;
         this.kilometros = 0;
         this.velocidadPromedio = 0;
+        this.fechaMan= new Fecha("0",1,1,1900);
     
     }
 
@@ -30,6 +31,7 @@ public class Avion {
         this.CantAsientos = cantA;
         this.kilometros = km;
         this.velocidadPromedio = velProm;
+        this.fechaMan= new Fecha();
     }
 
     // Observadores
