@@ -54,10 +54,10 @@ public class Salon {
 
     public String toString() {
         return "Nombre:" + this.nombre +
-                "disponibilidad:" + this.disponibilidad +
-                "musica:" + this.musica +
-                "direccion:" + this.direccion +
-                "telefono:" + this.telefono;
+                "\ndisponibilidad:" + this.disponibilidad +
+                "\nmusica:" + this.musica +
+                "\ndireccion:" + this.direccion +
+                "\ntelefono:" + this.telefono;
     }
 
     // Modificadores
@@ -108,5 +108,7 @@ public class Salon {
         return valorDisp;
     }
 
+    
+    
     
 }
