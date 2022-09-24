@@ -19,7 +19,8 @@ public class Ejercicio4PMetodos {
         System.out.println("Ingrese cadena de texto");
         cadena = sc.nextLine();
 
-        cadena.trim();// saca los espacios de mas en principio y fin
+        cadena.trim();// NO FUNCIONA EL TRIM
+        System.out.println(cadena);
         cadena = cadena + ' ';
         longC = cadena.length();
 
