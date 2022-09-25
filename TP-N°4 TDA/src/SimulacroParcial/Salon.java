@@ -108,7 +108,17 @@ public class Salon {
         return valorDisp;
     }
 
-    
-    
-    
+    public static int MayorCapacidad(Salon[] Salones) {
+        int posMayor, mayor;
+        mayor = 0;
+        posMayor = 0;
+        for (int i = 0; i < Salones.length; i++) {
+            if (Salones[i].getDisponibilidad() > mayor) {
+                mayor = Salones[i].getDisponibilidad();
+                posMayor = i;
+            }
+        }
+        return posMayor;
+    }
+
 }
