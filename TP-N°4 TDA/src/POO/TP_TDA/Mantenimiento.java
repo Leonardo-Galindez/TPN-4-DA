@@ -182,7 +182,7 @@ public class Mantenimiento {
                 System.out.println("Ingrese año");
                 anio = sc.nextInt();
                 Mantenimientos[i] = new Fecha(idAvion, dia, mes, anio);
-            } while (!Mantenimientos[i].esFechaCorrecta());
+            } while (!Mantenimientos[i].getFechaCorrecta());
 
             miAvion[i] = auxAvion;
             miAvion[i].setModelo(modelo);

@@ -30,7 +30,7 @@ public class Fecha {
         this.codigo = cod;
         this.fechaCorrecta = true;
 
-        if (elAnio > 0 || elAnio < 10000) {
+        if (elAnio > 0 && elAnio < 10000) {
             this.anio = elAnio;
         } else {
             this.anio = 0;
@@ -43,7 +43,7 @@ public class Fecha {
         }
         
 
-        if (elDia > 31 || elDia < 1) {
+        if (elDia > 31 && elDia < 1) {
             this.dia = 0;
         } else {
             if (elDia < 29) {
@@ -107,6 +107,9 @@ public class Fecha {
 
     public int getAnio() {
         return anio;
+    }
+    public boolean getFechaCorrecta(){
+        return fechaCorrecta;
     }
 
     public String toString() {
@@ -204,7 +207,9 @@ public class Fecha {
         if (anio % 4 == 0) {
             Dias[1] = 29;
         }
-
+        if(d<0){
+            d=d*-1;
+        }
         diasTotal = dia + d;
        
             while (!valorFecha ) {
@@ -212,21 +217,20 @@ public class Fecha {
                     diasTotal = diasTotal - Dias[mes - 1];
                 }
                 
-                if(diasTotal<0){
-                    diasTotal=diasTotal*-1;
-                }
-                mes++;
-                if (diasTotal <= Dias[mes - 1]) {
-                    valorFecha = true;
-                    this.dia = diasTotal;
-                    this.mes = mes - 1;
-                }
-    
                 if (mes > 11) {
                     this.mes = 1;
                     this.anio = this.anio + 1;
                     mes = 1;
+                }else{
+                    mes++;
                 }
+                if (diasTotal <= Dias[mes - 1]) {
+                    valorFecha = true;
+                    this.dia = diasTotal;
+                    this.mes = mes;
+                }
+    
+                
     
             }
         
