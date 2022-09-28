@@ -28,9 +28,10 @@ public class TestLavadero {
                 auxAuto = new Auto(patente);
                 valorPatente = VerificarPantente(MisAutos, auxAuto);
             } while (valorPatente);
-
+            
             System.out.println("Ingrese Nombre del Propietario");
-            nombrePropietario = input.next();
+            nombrePropietario = input.nextLine();
+            input.next();
             System.out.println("Ingrese telefono");
             telefono = input.nextInt();
             System.out.println("Externa: limpieza externa, solo el chasis-----1");

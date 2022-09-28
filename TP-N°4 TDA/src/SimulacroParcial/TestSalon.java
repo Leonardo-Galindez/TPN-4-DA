@@ -39,10 +39,13 @@ public class TestSalon {
             disponibilidad = sc.nextInt();
             System.out.println("Se pude usar musica true si, false no");
             musica = sc.nextBoolean();
+            sc.nextLine();
             System.out.println("Ingrese direccion");
-            direccion = sc.next();
+            direccion = sc.nextLine();
+
             System.out.println("Ingrese telefono");
             telefono = sc.nextInt();
+            sc.nextLine();
 
             Salones[i] = auxSalon;
             Salones[i].setDisponibilidad(disponibilidad);

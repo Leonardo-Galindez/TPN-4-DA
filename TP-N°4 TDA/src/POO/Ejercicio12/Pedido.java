@@ -13,22 +13,20 @@ public class Pedido {
     // Metodos
 
     // Constructores
-
+    //metodo mostrar precios
     public Pedido(int cod) {
         this.codigo = cod;
         this.descripcion = "";
-        for (int i = 0; i < PreciosProductos.length; i++) {
-
-        }
+        
         this.direccion = "";
         this.nombrePersona = "";
         this.telefono = 0;
     }
 
-    public Pedido(int cod, String desc, String direc, String nomP, int telef) {
+    public Pedido(int cod, String desc, String direc, String nomP, int telef,float []precios ) {
         this.codigo = cod;
         this.descripcion = desc;
-        // Precio Productos como inicializar el arreglo
+        this.PreciosProductos=precios;
         this.direccion = direc;
         this.nombrePersona = nomP;
         this.telefono = telef;
@@ -63,12 +61,7 @@ public class Pedido {
     public String toString() {
         return "\nCodigo:" + codigo + "\ndescripcion:" + descripcion + "\ndireccion:" + direccion + "\nnombre Persona:"
                 + nombrePersona + "\ntelefono:" + telefono;
-        /*
-         * for(int i=0;i<PreciosProductos.length;i++){//Como mostrar los precios??
-         * System.out.println(PreciosProductos[i]);
-         * };
-         */
-
+    
     }
 
     // Modificadores
@@ -104,6 +97,28 @@ public class Pedido {
     }
 
     //Propias del tipo
+    
+    public void agregarItem(String producto,String Productos[]){
+        for(int i=0;i<Productos.length;i++){
+
+        }
+    }
+
+    private void definirPrecios(float []Precio){
+
+        Precio[0]=0;
+        Precio[1]=0;
+        Precio[2]=0;
+        Precio[3]=0;
+        Precio[4]=0;
+        Precio[5]=0;
+        Precio[6]=0;
+        Precio[7]=0;
+        Precio[8]=0;
+        Precio[9]=0;
+
+        
+    } 
 
     public float  calcularCosto(float PreciosProductos[]){
         float totalPedido;

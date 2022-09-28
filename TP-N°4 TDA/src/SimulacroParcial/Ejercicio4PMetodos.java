@@ -19,11 +19,11 @@ public class Ejercicio4PMetodos {
         System.out.println("Ingrese cadena de texto");
         cadena = sc.nextLine();
 
-        cadena.trim();// NO FUNCIONA EL TRIM
+        cadena=cadena.trim();// NO FUNCIONA EL TRIM
         System.out.println(cadena);
         cadena = cadena + ' ';
         longC = cadena.length();
-
+        //hola mundos 
         while (i < longC) {
             pos = cadena.indexOf(" ", pos);// retora la posicion de la primera ocurrencia de un espacio
 
