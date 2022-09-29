@@ -19,8 +19,7 @@ public class Ejercicio4PMetodos {
         System.out.println("Ingrese cadena de texto");
         cadena = sc.nextLine();
 
-        cadena=cadena.trim();// NO FUNCIONA EL TRIM
-        System.out.println(cadena);
+        cadena=cadena.trim();
         cadena = cadena + ' ';
         longC = cadena.length();
         //hola mundos 
@@ -32,7 +31,7 @@ public class Ejercicio4PMetodos {
             } else {
                 palabra = cadena.substring(i, pos);// retorna una palabra sin espacios
                 if (palabra.length() > 5) {
-                    while (j < 5) {// concatenamiento de la palabra mientras la longitud sea menor a 5
+                    while (j <= 5) {// concatenamiento de la palabra mientras la longitud sea menor a 5
                         auxPalabra = auxPalabra + palabra.charAt(j);
                         j++;
                     }
